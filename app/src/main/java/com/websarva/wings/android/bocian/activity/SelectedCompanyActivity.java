@@ -38,7 +38,7 @@ public class SelectedCompanyActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         // 企業登録画面を起動
-        findViewById(R.id.newReservation_bt_Confirm).setOnClickListener(view -> {
+        findViewById(R.id.selectedCompany_img_bt_plus).setOnClickListener(view -> {
             Intent intent = new Intent(SelectedCompanyActivity.this, EditCompanyActivity.class);
             startActivity(intent);
         });
@@ -48,6 +48,6 @@ public class SelectedCompanyActivity extends AppCompatActivity {
         // 削除処理を起動（リスト）
 
         // この画面の終了（戻る）
-        findViewById(R.id.button3).setOnClickListener( view -> { finish(); });
+        findViewById(R.id.selectedCompany_bt_back).setOnClickListener( view -> { finish(); });
     }
 }

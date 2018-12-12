@@ -37,19 +37,19 @@ public class ParticipantsActivity extends AppCompatActivity {
         }
         // 自身のアクティビティ、データ、レイアウトを指定
         ParticipantsListAdapter adapter = new ParticipantsListAdapter(ParticipantsActivity.this, data, R.layout.member_list_item);
-        ListView listView = findViewById(R.id.list); // レイアウト
+        ListView listView = findViewById(R.id.Participants_list_v_fixtures); // レイアウト
         listView.setAdapter(adapter);
 
         // 参加者追加画面を起動
-        findViewById(R.id.imageView3).setOnClickListener(view -> {
+        findViewById(R.id.Participants_img_bt_plus).setOnClickListener(view -> {
             Intent intent = new Intent(ParticipantsActivity.this, AddMemberActivity.class);
             startActivity(intent);
         });
 
         // この画面の終了（キャンセル）
-        findViewById(R.id.newReservation_bt_Cancel).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.Participants_bt_cancel).setOnClickListener(view -> { finish(); });
 
         // この画面の終了（確定）
-        findViewById(R.id.newReservation_bt_Confirm).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.Participants_bt_confirm).setOnClickListener(view -> { finish(); });
     }
 }

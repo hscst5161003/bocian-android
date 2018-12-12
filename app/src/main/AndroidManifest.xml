@@ -56,17 +56,14 @@
         <activity
             android:name="com.websarva.wings.android.bocian.activity.EditCompanyActivity"
             android:label="@string/edit_company" />
-        <!--まだ-->
         <!--参加者確認画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.ParticipantsActivity"
             android:label="@string/participant"></activity>
-        <!--まだ-->
         <!--備品確認画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.FixturesActivity"
             android:label="@string/fixtures"></activity>
-        <!--まだ-->
         <!--編集企業選択画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.SelectedCompanyActivity"

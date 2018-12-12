@@ -40,7 +40,7 @@ public class FixturesActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list); // レイアウト
         listView.setAdapter(adapter);
 
-        findViewById(R.id.imageView2).setOnClickListener(view -> {
+        findViewById(R.id.Fixtures_img_bt_plus).setOnClickListener(view -> {
             // 備品追加ダイアログの出現
             AddFixturesDialogFragment dialog = new AddFixturesDialogFragment();
             getSupportFragmentManager();
@@ -48,8 +48,8 @@ public class FixturesActivity extends AppCompatActivity {
         });
 
         // この画面の終了（キャンセル）
-        findViewById(R.id.newReservation_bt_Cancel).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.Fixtures_bt_cancel).setOnClickListener(view -> { finish(); });
         // この画面の終了（確定）
-        findViewById(R.id.newReservation_bt_Confirm).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.Fixtures_bt_confirm).setOnClickListener(view -> { finish(); });
     }
 }
