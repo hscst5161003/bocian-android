@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdominiConActivity">
+    tools:context=".activity.AdminConActivity">
 
     <View
         android:id="@+id/adminCon_vi_back"
