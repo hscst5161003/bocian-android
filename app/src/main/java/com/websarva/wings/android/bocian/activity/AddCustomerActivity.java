@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// 参加者追加画面（社外者）
 public class AddCustomerActivity extends AppCompatActivity {
 
     public static final int ZERO = 0;
@@ -50,13 +51,13 @@ public class AddCustomerActivity extends AppCompatActivity {
         }
         // リスナー
         // 企業登録画面の起動
-        findViewById(R.id.button2).setOnClickListener(view -> {
+        findViewById(R.id.addCustomer_img_bt_add_to).setOnClickListener(view -> {
             Intent intent = new Intent(AddCustomerActivity.this, EditCompanyActivity.class);
             startActivity(intent);
         });
         // この画面の終了（確定）
-        findViewById(R.id.button11).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.addCustomer_bt_confirm).setOnClickListener(view -> { finish(); });
         // この画面の終了（キャンセル）
-        findViewById(R.id.button6).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.addCustomer_bt_cancel).setOnClickListener(view -> { finish(); });
     }
 }

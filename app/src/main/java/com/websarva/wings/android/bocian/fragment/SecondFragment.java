@@ -57,7 +57,7 @@ public class SecondFragment extends Fragment {
         // onViewCreatedではアクセスタイミングが早すぎるため、こちらで行う
 
         // 企業登録画面を起動
-        view.findViewById(R.id.button2).setOnClickListener(v -> {
+        view.findViewById(R.id.newReservation_bt_Cancel).setOnClickListener(v -> {
             Intent intent = new Intent(activity, EditCompanyActivity.class);
             startActivity(intent);
         });

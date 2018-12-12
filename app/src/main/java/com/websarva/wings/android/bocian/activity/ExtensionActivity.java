@@ -8,6 +8,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.websarva.wings.android.bocian.R;
+import com.websarva.wings.android.bocian.fragment.ExtensionDialogFragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,6 +22,14 @@ public class ExtensionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extension);
 
+
+        findViewById(R.id.extension_bt_confirm).setOnClickListener(v -> {
+            ExtensionDialogFragment extensionDialogFragment = new ExtensionDialogFragment();
+            extensionDialogFragment.show(getSupportFragmentManager(),"ExtensionDialogFragment");
+        });
+
+        findViewById(R.id.extension_bt_cancel).setOnClickListener( v -> finish());
+
         Spinner sp = findViewById(R.id.extension_spinar_hour);
 
         Litenner lt = new Litenner();
@@ -28,7 +37,7 @@ public class ExtensionActivity extends AppCompatActivity {
 
         TextView time = findViewById(R.id.extension_tv_remainingTime);
 
-        time.setText(getNowDate());
+//        time.setText(getNowDate());
 
 
 //        Spinner mSpinner = (Spinner)findViewById(R.id.spinner);
@@ -48,30 +57,6 @@ public class ExtensionActivity extends AppCompatActivity {
         return df.format(date);
     }
 
-
-    private class ClickListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View view) {
-            int id = view.getId();
-            switch (id){
-                case R.id.extension_bt_confirm:
-                    //確定ボタンのクリック時の処理
-//                  DBアクセス
-//                  ↓
-//                  延長時間をupdateする。
-//                  ↓
-//                  update成功の旨のダイアログを表示する。
-//                  ↓
-//                  終了。
-                    break;
-                case R.id.extension_bt_cancel:
-                    //キャンセルボタンのクリック時の処理
-//                  Intent intent = new Intent(this,スタート画面(起動時の画面));
-                    break;
-            }
-        }
-    }
 
 //(小倉)スピナー内のアイテムが選択されたときのリスナー
 //(小倉)21時以降は延長できないので21時を選択した場合は「00」分に設定する

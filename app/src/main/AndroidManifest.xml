@@ -25,39 +25,48 @@
         <activity
             android:name="com.websarva.wings.android.bocian.activity.AdminConActivity"
             android:label="@string/bookingConActivity"></activity>
-        <!--ハンバーガーメニューテスト画面(テスト)-->
+        <!--ハンバーガーメニューテスト画面（テスト）-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.MenuActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <!--スケジュール画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.ScheduleActivity"
             android:label="@string/scheduleActivity">
+        </activity>
+        <!--新規予約画面-->
+        <activity
+            android:name="com.websarva.wings.android.bocian.activity.NewReservationActivity"
+            android:label="@string/new_reservation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--新規予約画面-->
-        <activity
-            android:name="com.websarva.wings.android.bocian.activity.NewReservationActivity"
-            android:label="@string/new_reservation"></activity>
         <!--参加者追加画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.AddMemberActivity"
+            android:label="@string/add_member"></activity>
+        <!--参加者追加画面（社外者）-->
+        <activity
+            android:name="com.websarva.wings.android.bocian.activity.AddCustomerActivity"
             android:label="@string/add_member"></activity>
         <!--会社編集画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.EditCompanyActivity"
             android:label="@string/edit_company" />
+        <!--まだ-->
         <!--参加者確認画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.ParticipantsActivity"
             android:label="@string/participant"></activity>
+        <!--まだ-->
         <!--備品確認画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.FixturesActivity"
             android:label="@string/fixtures"></activity>
+        <!--まだ-->
         <!--編集企業選択画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.SelectedCompanyActivity"

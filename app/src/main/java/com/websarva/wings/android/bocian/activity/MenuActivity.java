@@ -17,6 +17,7 @@ import com.websarva.wings.android.bocian.fragment.AdminLoginFragment;
 import com.websarva.wings.android.bocian.fragment.FirstFragment;
 import com.websarva.wings.android.bocian.fragment.SecondFragment;
 
+// ハンバーガーメニューテスト画面（テスト）
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

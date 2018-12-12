@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
+// 編集企業選択画面
 public class SelectedCompanyActivity extends AppCompatActivity {
     public static final int ZERO = 0;
 
@@ -38,7 +38,7 @@ public class SelectedCompanyActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         // 企業登録画面を起動
-        findViewById(R.id.button4).setOnClickListener(view -> {
+        findViewById(R.id.newReservation_bt_Confirm).setOnClickListener(view -> {
             Intent intent = new Intent(SelectedCompanyActivity.this, EditCompanyActivity.class);
             startActivity(intent);
         });

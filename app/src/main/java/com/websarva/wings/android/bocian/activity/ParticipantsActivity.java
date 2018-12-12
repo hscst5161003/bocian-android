@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// 参加者確認画面
 public class ParticipantsActivity extends AppCompatActivity {
 
     public static final int ZERO = 0;
@@ -46,9 +47,9 @@ public class ParticipantsActivity extends AppCompatActivity {
         });
 
         // この画面の終了（キャンセル）
-        findViewById(R.id.button2).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.newReservation_bt_Cancel).setOnClickListener(view -> { finish(); });
 
         // この画面の終了（確定）
-        findViewById(R.id.button4).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.newReservation_bt_Confirm).setOnClickListener(view -> { finish(); });
     }
 }

@@ -66,23 +66,23 @@ public class AddMemberActivity extends AppCompatActivity {
 
             // 自身のアクティビティ、データ、レイアウトを指定
         AddEmployeeListAdapter empAdapter = new AddEmployeeListAdapter(AddMemberActivity.this, data, R.layout.add_employee_list_item);
-        ListView listView = findViewById(R.id.list); // レイアウト
+        ListView listView = findViewById(R.id.addMemberActivity_list_vi_person); // レイアウト
 
         AddCompanyListAdapter companyAdapter = new AddCompanyListAdapter(AddMemberActivity.this, data2, R.layout.company_list_item);
         listView.setAdapter(empAdapter);
 
 
-        Spinner sp1 = findViewById(R.id.spinner);
+        Spinner sp1 = findViewById(R.id.addMemberActivity_spinar_inside_outside);
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             //　アイテムが選択された時
             @Override
             public void onItemSelected(AdapterView<?> parent,
                                        View view, int position, long id) {
-                EditText et = findViewById(R.id.editText);
-                ImageButton bt = findViewById(R.id.button12);
-                Button bt2 = findViewById(R.id.button2);
-                Spinner sp = findViewById(R.id.spinner2);
-                Spinner sp2 = findViewById(R.id.spinner3);
+                EditText et = findViewById(R.id.addMemberActivity_ed_tv_name);
+                ImageButton bt = findViewById(R.id.addMemberActivity_img_bt_plus);
+                Button bt2 = findViewById(R.id.addMemberActivity_bt_choice);
+                Spinner sp = findViewById(R.id.addMemberActivity_spinar_division);
+                Spinner sp2 = findViewById(R.id.addMemberActivity_spinar_section);
 
                 switch (position){
                     case 0:
@@ -142,21 +142,21 @@ public class AddMemberActivity extends AppCompatActivity {
             }
         });
         // 企業登録画面の起動
-        findViewById(R.id.button12).setOnClickListener(view -> {
+        findViewById(R.id.addMemberActivity_img_bt_plus).setOnClickListener(view -> {
             Intent intent = new Intent(AddMemberActivity.this, EditCompanyActivity.class);
             startActivity(intent);
         });
         // この画面の終了（キャンセル）
-        findViewById(R.id.button3).setOnClickListener(view -> {
+        findViewById(R.id.addMemberActivity_bt_cancel).setOnClickListener(view -> {
             Intent intent = new Intent(AddMemberActivity.this, MenuActivity.class);
             startActivity(intent);
         });
 
         // この画面の終了（確定）
-        findViewById(R.id.button4).setOnClickListener(view -> { finish(); });
+        findViewById(R.id.addMemberActivity_bt_confirm).setOnClickListener(view -> { finish(); });
 
         // 全選択
-        findViewById(R.id.button2).setOnClickListener(view -> {
+        findViewById(R.id.addMemberActivity_bt_choice).setOnClickListener(view -> {
             for (int i = 0; i < empAdapter.getCount(); i++) {
                 View c_listView = empAdapter.getView(i, null, null);
                 CheckBox check = (CheckBox) c_listView.findViewById(R.id.checkbox);
@@ -164,7 +164,7 @@ public class AddMemberActivity extends AppCompatActivity {
                 empAdapter.notifyDataSetChanged();
             }
             allCheck = !allCheck; // フラグを反転
-            Button btn = findViewById(R.id.button2);
+            Button btn = findViewById(R.id.addMemberActivity_bt_choice);
             btn.setText(allCheck ? "全解除" : "全選択");
         });
     }

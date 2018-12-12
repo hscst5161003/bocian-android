@@ -10,6 +10,7 @@ import com.websarva.wings.android.bocian.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// 予約確認画面
 public class BookingConActivity extends AppCompatActivity {
 
     // newNoodleの1-30が追加されたかどうかのフラグ true:追加された false:まだ追加されてない

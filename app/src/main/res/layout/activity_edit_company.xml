@@ -72,25 +72,24 @@
     </ListView>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/editCompany_bt_Confirm"
         style="@style/buttonBarButtonStyle.Positive"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="確定"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/editCompany_bt_Cancel"
+        app:layout_constraintTop_toTopOf="@+id/editCompany_bt_Cancel" />
 
     <Button
-        android:id="@+id/button2"
-        style="@style/buttonBarButtonStyle"
+        android:id="@+id/editCompany_bt_Cancel"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:text="キャンセル"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/editCompany_bt_Confirm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list" />
 

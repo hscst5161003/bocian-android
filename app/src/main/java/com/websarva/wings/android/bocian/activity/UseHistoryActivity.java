@@ -10,6 +10,7 @@ import com.websarva.wings.android.bocian.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// 利用履歴画面
 public class UseHistoryActivity extends AppCompatActivity {
 
     // newNoodleの1-30が追加されたかどうかのフラグ true:追加された false:まだ追加されてない

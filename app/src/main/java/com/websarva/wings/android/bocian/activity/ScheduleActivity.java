@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.websarva.wings.android.bocian.R;
 
+// スケジュール画面
 public class ScheduleActivity extends AppCompatActivity {
 
     @Override
