@@ -12,7 +12,12 @@
         <!--予約延長画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.ExtensionActivity"
-            android:label="@string/extensionActivity" />
+            android:label="@string/extensionActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--利用履歴画面-->
         <activity
             android:name="com.websarva.wings.android.bocian.activity.UseHistoryActivity"
@@ -33,10 +38,6 @@
         <activity
             android:name="com.websarva.wings.android.bocian.activity.ScheduleActivity"
             android:label="@string/scheduleActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!--新規予約画面-->
         <activity
