@@ -1,8 +1,6 @@
 package com.websarva.wings.android.bocian.activity;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,102 +8,73 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.websarva.wings.android.bocian.R;
-import com.websarva.wings.android.bocian.fragment.ExtensionDialogFragment;
 
-import java.text.ParseException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.Date;
 
 
 public class ExtensionActivity extends AppCompatActivity {
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extension);
 
-        /**@author Ogura Takumi
-         * Spinner(時)のId取得
-         * 21時が選択されたときのsetOnItemListenerのltのインスタンス化とspinnerにltの設定
-         * 後ほど21時を選択した場合のSpinner(分)を不活性にするための処理使用するため
-         */
-        TextView useFinishTime = findViewById(R.id.extension_lastTime);
-        TextView time = findViewById(R.id.extension_tv_remainingTime);
         Spinner sp = findViewById(R.id.extension_spinar_hour);
+
         Litenner lt = new Litenner();
         sp.setOnItemSelectedListener(lt);
 
-        /**@author Ogura Takumi
-         * 残り時間の欄に( 利用終了時刻 - 現在時刻 )を格納(フォーマットはHH:mm)
-         */
-        try {
-            time.setText(remainingTime(changeDateData(useFinishTime.getText().toString()),getNowDate()));
-        } catch (ParseException e) {
-            e.printStackTrace();
+        TextView time = findViewById(R.id.extension_tv_remainingTime);
+
+        time.setText(getNowDate());
+
+
+//        Spinner mSpinner = (Spinner)findViewById(R.id.spinner);
+//        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.spinner_1,R.layout.activity_extension);
+//
+//        adapter.setDropDownViewResource(R.layout.dropdown_custom);
+//        mSpinner.setAdapter(adapter);
+
+    }
+
+    /**
+     * 現在日時をyyyy/MM/dd HH:mm:ss形式で取得する.<br>
+     */
+    public static String getNowDate(){
+        final DateFormat df = new SimpleDateFormat("HH:mm");
+        final Date date = new Date(System.currentTimeMillis());
+        return df.format(date);
+    }
+
+
+    private class ClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            int id = view.getId();
+            switch (id){
+                case R.id.extension_bt_confirm:
+                    //確定ボタンのクリック時の処理
+//                  DBアクセス
+//                  ↓
+//                  延長時間をupdateする。
+//                  ↓
+//                  update成功の旨のダイアログを表示する。
+//                  ↓
+//                  終了。
+                    break;
+                case R.id.extension_bt_cancel:
+                    //キャンセルボタンのクリック時の処理
+//                  Intent intent = new Intent(this,スタート画面(起動時の画面));
+                    break;
+            }
         }
-
-        /**@author Ogura Takumi
-         * 確定ボタンの処理
-         */
-        findViewById(R.id.extension_bt_confirm).setOnClickListener(v -> {
-            ExtensionDialogFragment extensionDialogFragment = new ExtensionDialogFragment();
-            extensionDialogFragment.show(getSupportFragmentManager(),"ExtensionDialogFragment");
-        });
-        /**@author Ogura Takumi
-         * キャンセルボタンの処理
-         */
-        findViewById(R.id.extension_bt_cancel).setOnClickListener( v -> finish());
-
     }
 
-    /**@author Ogura Takumi
-     * 現在日時をyyyy/MM/dd HH:mm形式で取得する.<br>
-     * @return
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static LocalDateTime getNowDate(){
-        return LocalDateTime.now();
-    }
-
-    /**@author Ogura Takumi
-     * @param  time
-     * @return String型からLocalDate型に変換
-     * @throws ParseException
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static LocalDateTime changeDateData(String time) throws ParseException {
-        return LocalDateTime.parse(time,DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm"));
-    }
-
-    /**
-     * @author Ogura Takumi
-     * @param from
-     * @param to
-     * duration型で二つの時間の差を測る(from,to)
-     * LocalTime.MIDNIGHTはその日の深夜零時を指す(00:00)
-     * それにdurationで測った差を足し差をHH:mmのフォーマットに変換する
-     * @return remainingTime
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static String remainingTime(LocalDateTime from, LocalDateTime to){
-        Duration duration = Duration.between(from,to);          //二つの時間の差を測る
-        LocalTime time = LocalTime.MIDNIGHT.plus(duration);    //(00:00)に差を足す
-        String remainingTime = DateTimeFormatter.ofPattern("HH:mm").format(time);//(HH:mm)に変換する
-        return remainingTime;
-    }
-
-    /**
-     * @author Ogura Takumi
-     * スピナー内のアイテムが選択されたときのリスナー
-     * 21時以降は延長できないので21時を選択した場合は「00」分に設定する
-     */
+//(小倉)スピナー内のアイテムが選択されたときのリスナー
+//(小倉)21時以降は延長できないので21時を選択した場合は「00」分に設定する
     private class Litenner implements AdapterView.OnItemSelectedListener{
 
         @Override
